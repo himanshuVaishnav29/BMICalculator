@@ -1,14 +1,17 @@
 const express=require("express");
 const fs=require("fs");
+const path = require("path");
 const userData=require("./userData.json");
 const app=express();
 
+
+app.use(express.static(path.join(__dirname, "/")));
 app.use(express.urlencoded({extended:'false'}));
 app.use(express.static("./"));
 
 app.get("/",(req,res)=>{
     // res.send("home");
-    fs.readFile("index.html","utf8",(err,data)=>{
+    fs.readFile(path.join(__dirname, "index.html"),"utf8",(err,data)=>{
         if(err)console.log("Error fetching index.html",err);
         else
         // res.setHeader({'content-type':'text/html'});
