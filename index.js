@@ -7,7 +7,7 @@ const app=express();
 
 app.use(express.static(path.join(__dirname, "/")));
 app.use(express.urlencoded({extended:'false'}));
-app.use(express.static("./"));
+app.use(express.static("./"));  
 
 app.get("/",(req,res)=>{
     // res.send("home");
