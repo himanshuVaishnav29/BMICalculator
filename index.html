@@ -116,7 +116,7 @@
 
     <script>
         async function  getAndDisplayData(){
-            const response=await fetch("http://localhost:3500/getUserData");
+            const response=await fetch("/getUserData");
             const data=await response.json();
             const table=document.getElementById("tBody");
             // table.innerHTML="";
